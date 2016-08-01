@@ -1,10 +1,73 @@
 <resources>
-    <string name="app_name">Get</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Bubble</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_user_home">UserHome</string>
-    <string name="title_activity_business_home">BusinessHomeActivity</string>
-    <string name="trans1">transOne</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="item_title">Palais Garnier</string>
+    <string name="item_desc">The Palais Garnier which locates in Paris was built from 1861 for
+        the Paris Opera.
+    </string>
+    <string name="detail_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+    </string>
+    <string name="detail_location">"8 Rue Scribe, 75009 Paris, France"</string>
+    <string name="title_activity_login">Sign In</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email (Username)</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="forgot_your_password">Forgot your password</string>
+    <string name="do_not_have_an_account">Don\'t have an account?</string>
+    <string name="register">Register</string>
+    <string name="email_does_not_exist">Email doesn\'t exist</string>
+    <string name="password_is_wrong">Password is wrong</string>
+    <string name="something_went_wrong">Something went wrong</string>
+
+
+    <string name="search_title">search</string>
+    <string name="search_hint">Search...</string>
+    <string name="title_activity_newitem">newitem</string>
+    <string name="loading">Loading</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_closed">Close</string>
+
+    <string name="login">LOGIN</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="go">GO</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="next">NEXT</string>
+    <string name="txt_yo_yo">YoYoYOOy</string>
+
+
+    <string name="error_confirm_passord_not_identical">Confirm password not identical</string>
+    <string name="wrong_password">Wrong Password</string>
+    <string name="no_matching_email">No Matching Email</string>
+    <string name="Email_alrady_Exist">Email Already Exist</string>
+    <string name="Mobile_Aready_Exist">Mobile Already Exist</string>
+    <string name="facebook_app_id">1068276013232042</string>
+    <string name="fb_login_protocol_scheme">fb1068276013232042</string>
+    <string name="image_trans">imageTransition</string>
+    <string name="name_trans">nameTransition</string>
+    <string name="trans1"></string>
+    <string name="title_activity_user_home">Home</string>
+    <string name="title_activity_maps">Map</string>
+
+
 </resources>

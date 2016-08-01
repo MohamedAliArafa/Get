@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#2c3e50</color>
+    <color name="colorPrimaryDark">#34495e</color>
+    <color name="colorPrimaryDark2">#0d263a</color>
+    <color name="colorPrimaryDark3">#157efb</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_grey">#424242</color>
+    <color name="medium_grey">#9E9E9E</color>
+    <color name="medium_grey_2">#999E9E9E</color>
+
+    <color name="soft_grey">#d6d6d6</color>
+    <color name="soft_grey_1">#E0E0E0</color>
+    <color name="Back1">#FAFAFA</color>
+    <color name="button_grey">#515151</color>
+    <color name="black">#000000</color>
+    <color name="test">#ff5521</color>
+    <color name="test2">#263238</color>
+    <color name="test3">#37474F</color>
+    <color name="test4">#00BCD4</color>
+    <color name="test5">#00796B</color>
+    <color name="test6">#263238</color>
+
+
+    <color name="material_login_login_color">#FFFFFF</color>
+    <color name="material_login_register_color">#FF4081</color>
+    <color name="material_login_login_error_color">#ff5151</color>
+    <color name="material_login_register_error_color">#ffcdce</color>
+    <color name="material_login_login_text_color">#000</color>
+    <color name="material_login_register_text_color">#000</color>
+
+
+
 </resources>

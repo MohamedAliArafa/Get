@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
             Intent in  = new Intent(this, UserHomeActivity.class);
             startActivity(in);
             return true;
+        }else if (id==R.id.action_Map){
+            Intent in  = new Intent(this, MapsActivity.class);
+            startActivity(in);
         }
 
         return super.onOptionsItemSelected(item);

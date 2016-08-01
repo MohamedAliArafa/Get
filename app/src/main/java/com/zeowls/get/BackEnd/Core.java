@@ -87,12 +87,14 @@ public class Core {
         return data;
     }
 
-    public JSONObject getShopItems(int id) throws JSONException {
-        JSONObject json = null;
+    public JSONArray getShopItems(int id) throws JSONException {
+        JSONArray jsonArray = null;
         try {
             String response = getRequest(Domain + "/GetShopItems/" + id + "/JSON");
             if (!response.equals("0")) {
-                json = new JSONObject(response);
+                jsonArray = new JSONArray(response);
+                //  json = jsonArray.getJSONObject(0);
+
 //                putItemsDB(json);
             } else {
                 Log.d("getShopItems", response);
@@ -101,7 +103,7 @@ public class Core {
             e.printStackTrace();
         }
 //        putMoviesDB(json);
-        return json;
+        return jsonArray;
     }
 
     public JSONObject getShop(int id) throws JSONException {
@@ -109,7 +111,8 @@ public class Core {
         try {
             String response = getRequest(Domain + "/GetShop/" + id + "/JSON");
             if (!response.equals("0")) {
-                json = new JSONObject(response);
+                JSONArray jsonArray = new JSONArray(response);
+                json = jsonArray.getJSONObject(0);
 //                putShopsDB(json);
             } else {
                 Log.d("getShopItems", response);
@@ -126,7 +129,9 @@ public class Core {
         try {
             String response = getRequest(Domain + "/GetItem/" + id + "/JSON");
             if (!response.equals("0")) {
-                json = new JSONObject(response);
+                JSONArray jsonArray = new JSONArray(response);
+
+                json = jsonArray.getJSONObject(0);
 //                putItemsDB(json);
             } else {
                 Log.d("get Items", response);
@@ -280,4 +285,24 @@ public class Core {
         return responseJson;
 
     }
+
+
+    public JSONArray getHomePage() {
+        JSONArray json = null;
+        try {
+            String response = getRequest(Domain + "/HomePage/JSON");
+            if (!response.equals("0")) {
+                json = new JSONArray(response);
+            } else {
+                Log.d("get Items By Cat id", response);
+            }
+        } catch (Exception e) {
+//            Toast.makeText(context,  e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+//        putMoviesDB(json);
+        return json;
+    }
+
+
 }

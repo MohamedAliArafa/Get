@@ -100,7 +100,12 @@ public class ItemDetailFragment extends Fragment {
         Intent intent = getActivity().getIntent();
         item_id = intent.getIntExtra("id", 0);
         shop_id = intent.getIntExtra("ShopId", 0);
-
+        if (item_id != 0) {
+            new loadingData().execute();
+            new loadingData2().execute();
+        }else {
+            getActivity().finish();
+        }
         Log.d("Item Id", String.valueOf(item_id));
         Log.d("Shop Id", String.valueOf(shop_id));
 
@@ -198,8 +203,7 @@ public class ItemDetailFragment extends Fragment {
         }
 
 
-        new loadingData().execute();
-        new loadingData2().execute();
+
 
 
     }

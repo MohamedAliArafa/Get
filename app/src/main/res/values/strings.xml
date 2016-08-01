@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bubble</string>
+    <string name="app_name">GET</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -68,6 +68,7 @@
     <string name="trans1"></string>
     <string name="title_activity_user_home">Home</string>
     <string name="title_activity_maps">Map</string>
+    <string name="shipping_available">Shipping Available</string>
 
 
 </resources>

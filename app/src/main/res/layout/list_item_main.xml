@@ -23,32 +23,27 @@
     android:layout_marginLeft="@dimen/md_keylines"
     android:layout_marginRight="@dimen/md_keylines"
     android:background="@drawable/cardborder"
-    android:foreground="?attr/selectableItemBackground"
-    android:elevation="2dp">
+    android:elevation="2dp"
+    android:foreground="?attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/card_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_image_height"
             android:scaleType="centerCrop"
-            android:transitionName="@string/image_trans"
-            />
-
-
+            android:transitionName="@string/image_trans" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/medium_grey_2"
-            android:padding="5dp"
-            >
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/card_more_items"
@@ -56,20 +51,19 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_more_vert_white_24dp"
                 android:layout_centerVertical="true"
-                />
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_more_vert_white_24dp" />
 
             <ImageView
                 android:id="@+id/card_Favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/card_more_items"
                 android:layout_toStartOf="@+id/card_more_items"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_favorite_border_white_24dp"
-                android:layout_centerVertical="true"
 
                 />
 
@@ -78,44 +72,59 @@
 
         <TextView
             android:id="@+id/card_Name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/card_image"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/md_keylines"
-            android:layout_marginRight="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="@dimen/md_keylines"
-            android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/md_keylines"
             android:ellipsize="end"
             android:lines="1"
             android:singleLine="true"
-            tools:text="Item Name"
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/article_subheading"
             android:textStyle="bold"
             android:transitionName="@string/name_trans"
-            />
+            tools:text="Item Name" />
+
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/Shipping_Available_Layout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/card_Name"
-            >
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_maps_local_grocery_store" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/shipping_available" />
 
             <TextView
                 android:id="@+id/card_Shop_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:lines="1"
-                tools:text="Shop Name"
                 android:layout_marginEnd="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:lines="1"
+                android:singleLine="true"
                 android:textColor="@color/button_grey"
-                />
+                android:visibility="gone"
+                tools:text="Shop Name" />
 
             <TextView
                 android:id="@+id/share_button"
@@ -123,10 +132,125 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_weight="3"
-                tools:text="Price"
                 android:lines="1"
                 android:textColor="@color/dark_grey"
+                android:visibility="gone"
+                tools:text="Price" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/Time_Left_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Shipping_Available_Layout"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_shopping_basket" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/shipping_available" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Offer_Key_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Time_Left_Layout"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#"
+                android:textColor="@color/primaryDark"
+                 />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Food" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" #"
+                android:textColor="@color/primaryDark"
                 />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Pizza" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" #"
+                android:textColor="@color/primaryDark"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Food" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" #"
+                android:textColor="@color/primaryDark"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Pizza" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Sales_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Offer_Key_Layout"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_query_builder" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="2,500" />
+
+
         </LinearLayout>
 
     </RelativeLayout>

@@ -90,6 +90,16 @@ public class ShopDetailFragment extends Fragment {
         id = intent.getIntExtra("Shop_Id", 0);
 
         Log.d("Shop Id in Shop Detail", String.valueOf(id));
+        if (id !=0) {
+            loadingData = new loadingData2();
+            if (loadingData.getStatus() != AsyncTask.Status.RUNNING) {
+                loadingData.execute();
+            }
+            new loadingData().execute();
+        }else {
+            getActivity().finish();
+        }
+
     }
 
     @Override
@@ -188,13 +198,6 @@ public class ShopDetailFragment extends Fragment {
 //                fragmentTransaction.commit();
             }
         });
-
-
-        loadingData = new loadingData2();
-        if (loadingData.getStatus() != AsyncTask.Status.RUNNING) {
-            loadingData.execute();
-        }
-        new loadingData().execute();
 
 
     }

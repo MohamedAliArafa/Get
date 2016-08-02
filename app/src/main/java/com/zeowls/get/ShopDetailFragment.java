@@ -455,7 +455,7 @@ public class ShopDetailFragment extends Fragment {
         @Override
         public void onBindHeaderViewHolder(MainVH holder, int section) {
 //            holder.ItemName.setText(String.format("Section %d", section));
-            holder.ItemName.setText("");
+            holder.ItemName.setText("Top Offers");
         }
 
         @Override

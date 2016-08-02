@@ -166,7 +166,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
-                                android:src="@drawable/ic_action_action_favorite" />
+                                android:src="@drawable/ic_action_favorite" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -174,8 +174,8 @@
                                 android:layout_gravity="center_vertical"
                                 android:maxLines="1"
                                 android:text="Favourite"
+                                android:textColor="@color/colorPrimaryDark2"
                                 android:textSize="20sp"
-
 
                                 />
                         </LinearLayout>
@@ -205,13 +205,14 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
-                                android:src="@drawable/ic_action_content_mail" />
+                                android:src="@drawable/ic_action_question_answer" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:text="Contact"
+                                android:text="Chat"
+                                android:textColor="@color/colorPrimaryDark2"
                                 android:textSize="20sp"
 
                                 />
@@ -227,12 +228,13 @@
                     android:layout_marginTop="10dp">
 
 
+
+
                     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/my_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-
                         android:clipToPadding="false"
                         android:paddingBottom="@dimen/md_keylines"
                         android:paddingTop="@dimen/md_keylines"

@@ -150,85 +150,35 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_shopping_basket" />
+                android:src="@drawable/ic_action_query_builder" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="@string/shipping_available" />
+                android:text="5 Days Left" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/Offer_Key_Layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Time_Left_Layout"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
+                android:gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="#"
-                android:textColor="@color/primaryDark"
-                 />
+                android:text="#Food #Pizza #Food #Pizza"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/primaryDark" />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Food" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" #"
-                android:textColor="@color/primaryDark"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Pizza" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" #"
-                android:textColor="@color/primaryDark"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Food" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" #"
-                android:textColor="@color/primaryDark"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Pizza" />
-
-
-
-
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/Sales_Layout"
@@ -241,7 +191,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_query_builder" />
+                android:src="@drawable/ic_action_shopping_basket" />
 
 
             <TextView

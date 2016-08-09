@@ -1,672 +1,683 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/Back1">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/Back1" />
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Back1">
 
-    <LinearLayout
-        android:id="@+id/error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/no_network"
-            android:tint="@color/button_grey" />
-
-
-        <TextView
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:text="Ooops, That is awkward something Wrong Happened\n(Check Internet Connection)"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_gravity="center"
+            android:background="@color/Back1" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/Fragment_Item_Detail_ScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.zeowls.gifts.Fragments.ItemDetailFragment">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/no_network"
+                android:tint="@color/button_grey" />
 
 
-            <LinearLayout
-                android:id="@+id/Item_Detail_Root_Layout"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical"
-                android:visibility="visible"
+                android:gravity="center"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="Ooops, That is awkward something Wrong Happened\n(Check Internet Connection)"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                >
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+        </LinearLayout>
 
 
-                    <ImageView
-                        android:id="@+id/item_Shop_Photo"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@mipmap/ic_launcher" />
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/Fragment_Item_Detail_ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.zeowls.gifts.Fragments.ItemDetailFragment">
 
-                    <TextView
-                        android:id="@+id/item_detail_shop_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="25dp"
-                        android:layout_toEndOf="@+id/item_Shop_Photo"
-                        android:layout_toRightOf="@+id/item_Shop_Photo"
-                        android:maxLines="1"
-                        android:textSize="20sp"
-                        tools:text="Shop Name" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/item_image_pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp">
-
-                    </ImageView>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/medium_grey_2"
-
-                        >
-
-                        <TextView
-                            android:id="@+id/item_Detail_Name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginStart="10dp"
-                            android:padding="10dp"
-                            android:text="Item name"
-                            android:textColor="@color/white"
-                            android:textSize="24sp" />
-
-                    </LinearLayout>
-
-                    <!--<android.support.v4.view.ViewPager-->
-                    <!--android:id="@+id/item_image_pager"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="250dp">-->
-
-                    <!--</android.support.v4.view.ViewPager>-->
-                </RelativeLayout>
-
-
-                <android.support.v7.widget.CardView
+                <LinearLayout
+                    android:id="@+id/Item_Detail_Root_Layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/white">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+
+                    >
+
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+
+                        <ImageView
+                            android:id="@+id/item_Shop_Photo"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@mipmap/ic_launcher" />
+
                         <TextView
-                            android:id="@+id/item_detail_desc"
-                            android:layout_width="match_parent"
+                            android:id="@+id/item_detail_shop_name"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:text="asdasda sd asd as as das d"
+                            android:layout_marginTop="25dp"
+                            android:layout_toEndOf="@+id/item_Shop_Photo"
+                            android:layout_toRightOf="@+id/item_Shop_Photo"
+                            android:maxLines="1"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
-
-
-                        <TextView
-                            android:id="@+id/Offer_Key_Value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/item_detail_desc"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_horizontal"
-                            android:text="#Food #Pizza #Food #Pizza"
-                            android:textColor="@color/primaryDark"
-                            android:textSize="20sp" />
-
-                        <LinearLayout
-                            android:id="@+id/Fav_Sales_layout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/Offer_Key_Value"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_action_favorite" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="30dp"
-                                android:layout_marginRight="30dp"
-                                android:text="5,259"
-                                android:textSize="18sp" />
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_action_shopping_basket" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:text="3,2649"
-                                android:textSize="18sp" />
-
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:id="@+id/Shipping_Time_layout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/Fav_Sales_layout"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_maps_local_grocery_store" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="30dp"
-                                android:layout_marginRight="30dp"
-                                android:lines="1"
-                                android:maxLines="1"
-                                android:text="Shipping Available"
-                                android:textSize="18sp" />
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_action_query_builder" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:lines="1"
-                                android:maxLines="1"
-                                android:text="5 Days Left"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/statistics_Layout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/Shipping_Time_layout"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_action_action_assessment" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:text="9,2495"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
-
-                        <TextView
-                            android:id="@+id/item_detail_price_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/statistics_Layout"
-                            android:text="Price : "
-                            android:textSize="18sp"
-                            android:textColor="@color/colorPrimaryDark2"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginStart="20dp"
-                            />
-
-                        <TextView
-                            android:id="@+id/item_detail_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBottom="@+id/item_detail_price_txt"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_toEndOf="@+id/item_detail_price_txt"
-                            android:layout_toRightOf="@+id/item_detail_price_txt"
-                            android:text="$30316"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/item_Qty"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/item_detail_price_txt"
-                            android:text="Quantity : "
-                            android:textSize="18sp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="10dp"
-
-                            />
-
-
-                        <Button
-                            android:id="@+id/addToCart"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/item_Qty"
-                            android:background="@color/colorPrimaryDark2"
-                            android:text="Add to Cart"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
-
+                            tools:text="Shop Name" />
 
 
                     </RelativeLayout>
 
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp">
-
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:id="@+id/Reviews_Header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="20dp"
-                            android:paddingTop="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:text="Reviews"
-                                android:textColor="@color/colorPrimaryDark2"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/Reviews_Arrow_Down"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
-
-                                />
-
-                            <ImageView
-                                android:id="@+id/Reviews_Arrow_Up"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
-                                android:visibility="gone"
-
-                                />
-                        </RelativeLayout>
-
-
-                        <LinearLayout
-
-                            android:id="@+id/Expandable_Reviews"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:text="No One reviewed this item yet!, why won't you be the first."
-                                android:textAlignment="center"
-                                android:textSize="20sp" />
-
-                        </LinearLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/OverView_Header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="20dp"
-                            android:paddingTop="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:text="OverView"
-                                android:textColor="@color/colorPrimaryDark2"
-
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/OverView_Arrow_Down"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
-
-                                />
-
-                            <ImageView
-                                android:id="@+id/OverView_Arrow_Up"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
-                                android:visibility="gone"
-
-
-                                />
-                        </RelativeLayout>
-
-
-                        <LinearLayout
-
-                            android:id="@+id/Expandable_OverView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:text="the owner must forget to write overview, Sorry about that"
-                                android:textAlignment="center"
-                                android:textSize="20sp" />
-
-                        </LinearLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/Details_Header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="20dp"
-                            android:paddingTop="20dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:text="Details"
-                                android:textColor="@color/colorPrimaryDark2"
-                                android:textSize="20sp"
-
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/Details_Arrow_Down"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
-
-                                />
-
-                            <ImageView
-                                android:id="@+id/Details_Arrow_Up"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
-                                android:visibility="gone"
-
-
-                                />
-                        </RelativeLayout>
-
-
-                        <LinearLayout
-
-                            android:id="@+id/Expandable_Details"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp">
-
-                            <TextView
-                                android:id="@+id/item_detail_desc_2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginStart="10dp"
-                                android:textSize="20sp" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-
-                        >
+                        android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/item_Shop_Photo_2"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            android:src="@mipmap/ic_launcher" />
+                            android:id="@+id/item_image_pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp">
 
+                        </ImageView>
 
-                        <TextView
-                            android:id="@+id/item_detail_shop_name_2"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            tools:text=""
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/medium_grey_2"
 
-                            />
+                            >
+
+                            <TextView
+                                android:id="@+id/item_Detail_Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:padding="10dp"
+                                android:text="Item name"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+                        </LinearLayout>
+
+                        <!--<android.support.v4.view.ViewPager-->
+                        <!--android:id="@+id/item_image_pager"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="250dp">-->
+
+                        <!--</android.support.v4.view.ViewPager>-->
+                    </RelativeLayout>
 
 
-                        <TextView
-                            android:id="@+id/item_detail_shop_Short_Desc"
-                            android:layout_width="wrap_content"
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/item_detail_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text=""
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/Offer_Key_Value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/item_detail_desc"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="#Food #Pizza #Food #Pizza"
+                                android:textColor="@color/primaryDark"
+                                android:textSize="20sp" />
+
+                            <LinearLayout
+                                android:id="@+id/Fav_Sales_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Offer_Key_Value"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_action_favorite" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginRight="30dp"
+                                    android:text="5,259"
+                                    android:textSize="18sp" />
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_action_shopping_basket" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="3,2649"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/Shipping_Time_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Fav_Sales_layout"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_maps_local_grocery_store" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginRight="30dp"
+                                    android:lines="1"
+                                    android:maxLines="1"
+                                    android:text="Shipping Available"
+                                    android:textSize="18sp" />
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_action_query_builder" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:lines="1"
+                                    android:maxLines="1"
+                                    android:text="5 Days Left"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/statistics_Layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Shipping_Time_layout"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_action_action_assessment" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="9,2495"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/item_detail_price_txt"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/statistics_Layout"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Price : "
+                                android:textColor="@color/colorPrimaryDark2"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/item_detail_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/item_detail_price_txt"
+                                android:layout_toEndOf="@+id/item_detail_price_txt"
+                                android:layout_toRightOf="@+id/item_detail_price_txt"
+                                android:text=""
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/item_Qty_txt"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/item_detail_price_txt"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Quantity : "
+                                android:textColor="@color/colorPrimaryDark2"
+                                android:textSize="18sp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/item_Qty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/item_Qty_txt"
+                                android:layout_toEndOf="@+id/item_Qty_txt"
+                                android:layout_toRightOf="@+id/item_Qty_txt"
+                                android:text=""
+                                android:textSize="18sp" />
+
+                            <Button
+                                android:id="@+id/addToCart"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/item_Qty_txt"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/colorPrimaryDark2"
+                                android:text="Add to Cart"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:lines="1"
-                            android:maxLines="1"
-                            android:text=""
-                            android:textSize="16sp"
-                            android:visibility="visible" />
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/Reviews_Header"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="20dp"
+                                android:paddingTop="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Reviews"
+                                    android:textColor="@color/colorPrimaryDark2"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/Reviews_Arrow_Down"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
+
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/Reviews_Arrow_Up"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
+                                    android:visibility="gone"
+
+                                    />
+                            </RelativeLayout>
 
 
-                        <TextView
-                            android:id="@+id/item_detail_shop_Address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text=""
-                            android:textSize="16sp"
-                            android:visibility="visible"
+                            <LinearLayout
 
-                            />
+                                android:id="@+id/Expandable_Reviews"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:text="No One reviewed this item yet!, why won't you be the first."
+                                    android:textAlignment="center"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/OverView_Header"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="20dp"
+                                android:paddingTop="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:text="OverView"
+                                    android:textColor="@color/colorPrimaryDark2"
+
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/OverView_Arrow_Down"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
+
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/OverView_Arrow_Up"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
+                                    android:visibility="gone"
 
 
-                        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/item_detail_Shop_Top_Items"
+                                    />
+                            </RelativeLayout>
+
+
+                            <LinearLayout
+
+                                android:id="@+id/Expandable_OverView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:text="the owner must forget to write overview, Sorry about that"
+                                    android:textAlignment="center"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Details_Header"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="20dp"
+                                android:paddingTop="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Details"
+                                    android:textColor="@color/colorPrimaryDark2"
+                                    android:textSize="20sp"
+
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/Details_Arrow_Down"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_down"
+
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/Details_Arrow_Up"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/ic_action_hardware_keyboard_arrow_up"
+                                    android:visibility="gone"
+
+
+                                    />
+                            </RelativeLayout>
+
+
+                            <LinearLayout
+
+                                android:id="@+id/Expandable_Details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp">
+
+                                <TextView
+                                    android:id="@+id/item_detail_desc_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp">
+
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:clipToPadding="false"
-                            android:paddingBottom="@dimen/md_keylines"
-                            android:paddingTop="@dimen/md_keylines"
-                            android:scrollbars="none"
-                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                            android:orientation="vertical"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/item_Shop_Photo_2"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:src="@mipmap/ic_launcher" />
 
 
-                        <Button
-                            android:id="@+id/item_detail_shop_visit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/colorPrimaryDark2"
-                            android:text="Visit Shop"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/item_detail_shop_name_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text=""
 
-                </android.support.v7.widget.CardView>
-
-
-            </LinearLayout>
-
-        </RelativeLayout>
+                                />
 
 
-    </ScrollView>
+                            <TextView
+                                android:id="@+id/item_detail_shop_Short_Desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:visibility="visible" />
 
 
-</FrameLayout>
+                            <TextView
+                                android:id="@+id/item_detail_shop_Address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:visibility="visible"
+
+                                />
 
 
+                            <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/item_detail_Shop_Top_Items"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:clipToPadding="false"
+                                android:paddingBottom="@dimen/md_keylines"
+                                android:paddingTop="@dimen/md_keylines"
+                                android:scrollbars="none"
+                                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
+                            <Button
+                                android:id="@+id/item_detail_shop_visit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimaryDark2"
+                                android:text="Visit Shop"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+</ScrollView>

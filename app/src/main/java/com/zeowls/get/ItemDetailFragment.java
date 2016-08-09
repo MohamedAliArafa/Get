@@ -2,18 +2,14 @@ package com.zeowls.get;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,11 +25,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.squareup.picasso.Picasso;
 import com.zeowls.get.BackEnd.Core;
-import com.zeowls.get.BackEnd.FireOwl;
 import com.zeowls.get.Models.ItemDataMode;
 import com.zeowls.get.Widgets.SpacesItemDecoration;
 import com.zeowls.get.adapters.SectionedRecyclerViewAdapter;
@@ -247,7 +240,8 @@ public class ItemDetailFragment extends Fragment {
                 Log.d("Array size", String.valueOf(items.size()));
                 holder.ItemName.setText(items.get(absolutePosition).getName());
                 holder.ShopName.setText(items.get(absolutePosition).getShopName());
-                holder.ItemPrice.setText("$" + String.valueOf(items.get(absolutePosition).getPrice()));
+                String itemPrice_String = "$"+String.valueOf(items.get(absolutePosition).getPrice());
+                holder.ItemPrice.setText(itemPrice_String);
                 if (items.get(absolutePosition).getImgUrl().equals("http://bubble.zeowls.com/uploads/")) {
                     holder.imageView.setImageResource(R.drawable.android);
                 } else {
@@ -374,9 +368,6 @@ public class ItemDetailFragment extends Fragment {
         this.item_id = id;
     }
 
-    public void setShopId(int id) {
-        this.shop_id = id;
-    }
 
 
     private class loadingData extends AsyncTask {
@@ -856,11 +847,6 @@ public class ItemDetailFragment extends Fragment {
                     public boolean onPreDraw() {
                         Expandable_Reviews.getViewTreeObserver().removeOnPreDrawListener(this);
                         Expandable_Reviews.setVisibility(View.GONE);
-
-                        final int widthSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-                        final int heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-//                        Expandable_Reviews.measure(widthSpec, heightSpec);
-
                         mAnimator = slideAnimator(0, Expandable_Reviews.getMeasuredHeight());
                         return true;
                     }
@@ -872,12 +858,10 @@ public class ItemDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Expandable_Reviews.getVisibility() == View.GONE) {
-
                     expand();
                     Reviews_Arrow_Down.setVisibility(View.GONE);
                     Reviews_Arrow_Up.setVisibility(View.VISIBLE);
                 } else {
-
                     collapse();
                     Reviews_Arrow_Down.setVisibility(View.VISIBLE);
                     Reviews_Arrow_Up.setVisibility(View.GONE);
@@ -885,8 +869,6 @@ public class ItemDetailFragment extends Fragment {
                 }
             }
         });
-
-
         Expandable_OverView.getViewTreeObserver().addOnPreDrawListener(
                 new ViewTreeObserver.OnPreDrawListener() {
 
@@ -894,11 +876,6 @@ public class ItemDetailFragment extends Fragment {
                     public boolean onPreDraw() {
                         Expandable_OverView.getViewTreeObserver().removeOnPreDrawListener(this);
                         Expandable_OverView.setVisibility(View.GONE);
-
-                        final int widthSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-                        final int heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-//                        Expandable_Reviews.measure(widthSpec, heightSpec);
-
                         mAnimator2 = slideAnimator2(0, Expandable_OverView.getMeasuredHeight());
                         return true;
                     }
@@ -910,12 +887,10 @@ public class ItemDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Expandable_OverView.getVisibility() == View.GONE) {
-
                     expand2();
                     OverView_Arrow_Down.setVisibility(View.GONE);
                     OverView_Arrow_Up.setVisibility(View.VISIBLE);
                 } else {
-
                     collapse2();
                     OverView_Arrow_Down.setVisibility(View.VISIBLE);
                     OverView_Arrow_Up.setVisibility(View.GONE);
@@ -931,11 +906,6 @@ public class ItemDetailFragment extends Fragment {
                     public boolean onPreDraw() {
                         Expandable_Details.getViewTreeObserver().removeOnPreDrawListener(this);
                         Expandable_Details.setVisibility(View.GONE);
-
-                        final int widthSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-                        final int heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-//                        Expandable_Reviews.measure(widthSpec, heightSpec);
-
                         mAnimator3 = slideAnimator3(0, Expandable_Details.getMeasuredHeight());
                         return true;
                     }
@@ -967,7 +937,6 @@ public class ItemDetailFragment extends Fragment {
                 //      showDialog();
             }
         });
-        //  Fragment_Item_Detail_ScrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
     }

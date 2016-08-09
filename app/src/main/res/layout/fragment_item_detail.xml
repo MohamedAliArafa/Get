@@ -10,8 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/Back1"
-        />
+        android:background="@color/Back1" />
 
     <LinearLayout
         android:id="@+id/error"
@@ -158,67 +157,155 @@
                             android:layout_marginRight="10dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="20dp"
+                            android:text="asdasda sd asd as as das d"
                             android:textSize="20sp"
                             android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/Offer_Key_Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/item_detail_desc"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_horizontal"
+                            android:text="#Food #Pizza #Food #Pizza"
+                            android:textColor="@color/primaryDark"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/Fav_Sales_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Offer_Key_Value"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_action_favorite" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="30dp"
+                                android:layout_marginRight="30dp"
+                                android:text="5,259"
+                                android:textSize="18sp" />
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_action_shopping_basket" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="3,2649"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/Shipping_Time_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Fav_Sales_layout"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_maps_local_grocery_store" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="30dp"
+                                android:layout_marginRight="30dp"
+                                android:text="Shipping Available"
+                                android:textSize="18sp"
+                                android:lines="1"
+                                android:maxLines="1"
+                                />
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_action_query_builder" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="5 Days Left"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:textSize="18sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/statistics_Layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Shipping_Time_layout"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_action_action_assessment" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="9,2495"
+                                android:textSize="18sp" />
+
+
+                        </LinearLayout>
 
 
                         <TextView
                             android:id="@+id/item_detail_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/item_detail_desc"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="20sp"
-                            android:textStyle="italic"
-                            tools:text="120 LE" />
-
+                            android:layout_below="@+id/statistics_Layout"
+                            android:text="Price"
+                            android:textSize="18sp"
+                            />
 
                         <TextView
                             android:id="@+id/item_Qty"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/item_detail_price"
-                            android:layout_alignStart="@+id/item_detail_price"
                             android:layout_below="@+id/item_detail_price"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="5dp"
-                            android:text="5 items in stock"
-                            android:textSize="16sp" />
-
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_below="@+id/item_detail_desc"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="25dp"
-
-                            >
-
-                            <ImageView
-                                android:id="@+id/Email_Im"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_action_content_mail" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/Email_Im"
-                                android:text="Ask a Question"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="20sp"
-
-                                />
-
-                        </RelativeLayout>
+                            android:text="Quantity"
+                            android:textSize="18sp" />
 
 
                         <Button

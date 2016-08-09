@@ -166,7 +166,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Time_Left_Layout"
-            android:orientation="horizontal"
             >
 
             <TextView

@@ -473,7 +473,7 @@ public class ShopDetailFragment extends Fragment {
                 holder.ShopName.setText(items.get(absolutePosition).getShopName());
                 holder.ItemPrice.setText("$" + String.valueOf(items.get(absolutePosition).getPrice()));
                 if (items.get(absolutePosition).getImgUrl().equals("http://bubble.zeowls.com/uploads/")) {
-                    holder.imageView.setImageResource(R.drawable.bubble_logo);
+                    holder.imageView.setImageResource(R.mipmap.ic_launcher);
                 } else {
                     picasso.load(items.get(absolutePosition).getImgUrl()).fit().centerCrop().into(holder.imageView);
                 }

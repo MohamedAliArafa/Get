@@ -469,7 +469,6 @@ public class ItemDetailFragment extends Fragment {
 //                        }
 ////                        } else {
 ////                            Toast.makeText(getActivity(), "please login first", Toast.LENGTH_SHORT).show();
-////                            ((MainActivity) getActivity()).mDrawerLayout.openDrawer(GravityCompat.START);
 //////                            DialogFragment newFragment = new LoginFragment();
 //////                            newFragment.show(getFragmentManager(), "missiles");
 ////                        }
@@ -845,7 +844,6 @@ public class ItemDetailFragment extends Fragment {
         }
 
 
-//        ((MainActivity) getActivity()).mDrawerToggle.setDrawerIndicatorEnabled(false);
 
         picasso.load("http://bubble.zeowls.com/uploads/" + Shop_image).fit().centerCrop().into(item_Shop_Photo);
         picasso.load("http://bubble.zeowls.com/uploads/" + Shop_image).fit().centerCrop().into(item_Shop_Photo_2);

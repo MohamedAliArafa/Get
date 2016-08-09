@@ -13,13 +13,12 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-
-    <style name="MaterialLoginTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    </style>
+    <style name="MaterialLoginTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
 
     <style name="MaterialLoginTheme.SelectableItemTheme">
         <item name="colorControlHighlight">@color/material_login_register_color</item>
     </style>
+
     <style name="MaterialLoginTheme.SelectableItemBackground">
         <item name="android:theme">@style/MaterialLoginTheme.SelectableItemTheme</item>
         <item name="android:background">?attr/selectableItemBackground</item>
@@ -61,7 +60,7 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <style name="TextLabel" >
+    <style name="TextLabel">
         <item name="android:textColorHint">@color/button_grey</item>
         <item name="android:textSize">18sp</item>
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
@@ -70,7 +69,6 @@
         <item name="colorControlActivated">@color/button_grey</item>
 
     </style>
-
 
 
 </resources>

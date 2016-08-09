@@ -69,6 +69,10 @@
     <string name="title_activity_user_home">Home</string>
     <string name="title_activity_maps">Map</string>
     <string name="shipping_available">Shipping Available</string>
+    <string name="title_activity_main2">GET</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
 </resources>

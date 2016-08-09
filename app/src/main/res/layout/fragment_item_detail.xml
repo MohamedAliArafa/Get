@@ -75,7 +75,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/bubble_logo" />
+                        android:src="@mipmap/ic_launcher" />
 
                     <TextView
                         android:id="@+id/item_detail_shop_name"
@@ -481,7 +481,7 @@
                             android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/bubble_logo" />
+                            android:src="@mipmap/ic_launcher" />
 
 
                         <TextView

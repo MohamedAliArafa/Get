@@ -7,7 +7,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -111,7 +110,6 @@ public class HomeOffersFragment extends Fragment {
         protected Object doInBackground(Object[] params) {
             try {
                 Core core = new Core(getActivity());
-                JSONArray itemsarray = core.getHomePage();
                 JSONArray sectionsArray = core.getHomePage();
                 for (int i = 0; i < sectionsArray.length(); i++) {
                     String sectionName = sectionsArray.getJSONObject(i).getString("Catname");
@@ -222,7 +220,7 @@ public class HomeOffersFragment extends Fragment {
 
                     Intent intent = new Intent(getActivity(), ItemDetailActivity.class);
                     intent.putExtra("id", GiftItems.get(absolutePosition).getId());
-                    intent.putExtra("ShopId",GiftItems.get(absolutePosition).getShopId());
+                    intent.putExtra("ShopId", GiftItems.get(absolutePosition).getShopId());
                     getActivity().startActivity(intent);
                 }
             });

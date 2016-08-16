@@ -144,12 +144,12 @@ public class Core {
         return json;
     }
 
-    public JSONObject getAllShops() {
-        JSONObject json = null;
+    public JSONArray getAllShops() {
+        JSONArray json = null;
         try {
             String response = getRequest(Domain + "/GetAllShops/JSON");
             if (!response.equals("0")) {
-                json = new JSONObject(response);
+                json = new JSONArray(response);
 //                putShopsDB(json);
             } else {
                 Log.d("getAllShops", response);

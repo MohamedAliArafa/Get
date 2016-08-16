@@ -73,6 +73,12 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="No_location_Deteccetd">No Location Detected</string>
+    <string name="Location_Not_Enabled">Location is not Enabled</string>
+    <string name="Please_turn_on_gps_first">Please turn on GPS first</string>
+    <string name="Turn_On">Turn On</string>
+    <string name="No_Map">No</string>
+
 
 
 </resources>

@@ -81,8 +81,9 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        shops.clear();
         // Inflate the layout for this fragment
+
+
         if (view != null) {
             ViewGroup parent = (ViewGroup) view.getParent();
             if (parent != null)
@@ -104,7 +105,10 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
         View bottomSheet = view.findViewById(R.id.bottom_sheet);
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
+        getAllShops = new getAllShops();
+        if (getAllShops.getStatus() != AsyncTask.Status.RUNNING) {
+            getAllShops.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
 
     }
 
@@ -221,9 +225,19 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
         @Override
         protected void onPostExecute(Object o) {
             if (shops.size() != 0) {
+                Log.d("Shop Array ", shops.get(0).getName());
+                for (int i = 0; i < shops.size(); i++) {
+                    if (!shops.get(i).getLatitude().equals("null") && !shops.get(i).getLongitude().equals("null")) {
 
+                        LatLng sydney = new LatLng(Double.valueOf(shops.get(i).getLatitude()),Double.valueOf(shops.get(i).getLongitude()));
+                        mMap.addMarker(new MarkerOptions().position(sydney).title(shops.get(i).getName()));
+                        Log.d("Markers", String.valueOf(i));
+
+                    }
+                }
             } else {
-                Log.d("Shop Array ", shops.toString());
+                Log.d("Shop Array ", " Empty");
+
             }
         }
 
@@ -233,9 +247,11 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
             try {
                 Core core = new Core(getActivity());
                 JSONArray itemsarray = core.getAllShops();
+                //Log.d("ShopsJsonArray", itemsarray.toString());
                 if (itemsarray.length() != 0) {
                     for (int i = 0; i < itemsarray.length(); i++) {
                         JSONObject item = itemsarray.getJSONObject(i);
+                        //Log.d("ShopsJsonObject", item.toString());
                         ShopDataModel shop = new ShopDataModel();
                         shop.setId(item.getInt("id"));
                         shop.setName(item.getString("name"));
@@ -248,12 +264,26 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
                             shop.setPictureUrl(item.getString("profile_pic"));
                         }
                         //shop.setOwner(item.getString("owner"));
-
                         if (!item.isNull("profile_pic")) {
                             shop.setPictureUrl(item.getString("profile_pic"));
                         } else {
                             shop.setPictureUrl("null");
                         }
+
+                        if (!item.isNull("latitude")) {
+                            shop.setLatitude(item.getString("latitude"));
+                            Log.d("Latitude : ", item.getString("latitude"));
+                        } else {
+                            shop.setLatitude("null");
+                        }
+
+                        if (!item.isNull("longitude")) {
+                            shop.setLongitude(item.getString("longitude"));
+                            Log.d("longitude : ", item.getString("longitude"));
+                        } else {
+                            shop.setLongitude("null");
+                        }
+
 
                         if (!item.isNull("description")) {
                             shop.setDescription(item.getString("description"));
@@ -354,22 +384,11 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
 
     @Override
     public void onStart() {
-        getAllShops = new getAllShops();
-        if (getAllShops.getStatus() != AsyncTask.Status.RUNNING) {
-            getAllShops.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        }
+
         mGoogleApiClient.connect();
         super.onStart();
     }
 
-
-    @Override
-    public void onDestroy() {
-        if (getAllShops.getStatus() == AsyncTask.Status.RUNNING) {
-            getAllShops.cancel(true);
-        }
-        super.onDestroy();
-    }
 
     @Override
     public void onStop() {

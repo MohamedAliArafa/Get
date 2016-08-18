@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 import com.zeowls.get.BackEnd.Core;
 import com.zeowls.get.Models.ItemDataMode;
@@ -108,8 +111,30 @@ public class ItemDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Bundle bundle = getActivity().getIntent().getBundleExtra("bundle");
+
+        String transText = "";
+        String transitionName = "";
+
+        if (bundle != null) {
+            transitionName = bundle.getString("TRANS_NAME");
+//            actionTitle = bundle.getString("ACTION");
+//            imageBitmap = bundle.getParcelable("IMAGE");
+            transText = bundle.getString("TRANS_TEXT");
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_detail, container, false);
+        View view =  inflater.inflate(R.layout.fragment_item_detail, container, false);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            view.findViewById(R.id.item_image_pager).setTransitionName(transitionName);
+            view.findViewById(R.id.item_Detail_Name).setTransitionName(transitionName);
+        }
+
+        ((TextView) view.findViewById(R.id.item_Detail_Name)).setText(transText);
+
+        return view;
     }
 
     @Override
@@ -435,36 +460,36 @@ public class ItemDetailFragment extends Fragment {
                 });
 
 
-//                addToCart.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-////                        if (user_id != 0) {
-//                        if (item_id != 0 && shop_id != 0) {
-//                            new Core(getActivity()).addToCart(shop_id, item_id, item_name, item_price, item_image, item_desc, shop_name_txt);
+                addToCart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        if (user_id != 0) {
+                        if (item_id != 0 && shop_id != 0) {
+                            new Core(getActivity()).addToCart(shop_id, item_id, item_name, item_price, item_image, item_desc, shop_name_txt);
 //                            FireOwl fireOwl = new FireOwl(getActivity());
 //                            fireOwl.addOrder(shop_id, item_id, user_id);
-//
-//                            Toast.makeText(getActivity(), item_name + " Added to cart", Toast.LENGTH_SHORT).show();
-//
-////                            ShoppingCartActivity endFragment2 = new ShoppingCartActivity();
-////                            FragmentManager fragmentManager = getFragmentManager();
-////                            fragmentManager.beginTransaction()
-////                                    .hide(getFragmentManager().findFragmentByTag("homeFragment"))
-////                                    .add(R.id.fragment_main, endFragment2)
-////                                    .addToBackStack(null)
-////                                    .commit();
-////                                Intent intent = new Intent(getActivity(), ShoppingCartActivity.class);
-////                                startActivity(intent);
+
+                            Toast.makeText(getActivity(), item_name + " Added to cart", Toast.LENGTH_SHORT).show();
+
+//                            ShoppingCartActivity endFragment2 = new ShoppingCartActivity();
+//                            FragmentManager fragmentManager = getFragmentManager();
+//                            fragmentManager.beginTransaction()
+//                                    .hide(getFragmentManager().findFragmentByTag("homeFragment"))
+//                                    .add(R.id.fragment_main, endFragment2)
+//                                    .addToBackStack(null)
+//                                    .commit();
+//                                Intent intent = new Intent(getActivity(), ShoppingCartActivity.class);
+//                                startActivity(intent);
+                        } else {
+                            Log.d("Id Empty", "Item And Shop Ids are Empty");
+                        }
 //                        } else {
-//                            Log.d("Id Empty", "Item And Shop Ids are Empty");
+//                            Toast.makeText(getActivity(), "please login first", Toast.LENGTH_SHORT).show();
+////                            DialogFragment newFragment = new LoginFragment();
+////                            newFragment.show(getFragmentManager(), "missiles");
 //                        }
-////                        } else {
-////                            Toast.makeText(getActivity(), "please login first", Toast.LENGTH_SHORT).show();
-//////                            DialogFragment newFragment = new LoginFragment();
-//////                            newFragment.show(getFragmentManager(), "missiles");
-////                        }
-//                    }
-//                });
+                    }
+                });
 
 
             } catch (JSONException e) {

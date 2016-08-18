@@ -18,6 +18,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Vector;
 
+import com.zeowls.get.provider.Contract.ShopEntry;
+import com.zeowls.get.provider.Contract.ItemEntry;
+import com.zeowls.get.provider.Contract.CartEntry;
+
 public class Core {
 
     Context context;
@@ -206,6 +210,35 @@ public class Core {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public void addToCart(int shop_id, int item_id, String item_name, String item_price,
+                          String item_image, String item_desc, String shop_name) {
+
+        ContentValues cartValues = new ContentValues();
+        Vector<ContentValues> cVVector = new Vector<>();
+
+        cartValues.put(CartEntry.COLUMN_ITEM_ID, item_id);
+        cartValues.put(CartEntry.COLUMN_ITEM_NAME, item_name);
+        cartValues.put(CartEntry.COLUMN_ITEM_PRICE, item_price);
+        cartValues.put(CartEntry.COLUMN_ITEM_PHOTO, item_image);
+        cartValues.put(CartEntry.COLUMN_ITEM_DESC, item_desc);
+        cartValues.put(CartEntry.COLUMN_SHOP_ID, shop_id);
+        cartValues.put(CartEntry.COLUMN_SHOP_NAME, shop_name);
+
+        cVVector.add(cartValues);
+
+        int inserted = context.getContentResolver().update(CartEntry.CONTENT_URI, cartValues, CartEntry.COLUMN_ITEM_ID + " = ?", new String[]{String.valueOf(item_id)});
+        Log.i(Core.class.getSimpleName(), "Cart Updating Complete. " + inserted + " Inserted");
+        if (inserted == 0) {
+            // add to database
+            if (cVVector.size() > 0) {
+                ContentValues[] cvArray = new ContentValues[cVVector.size()];
+                cVVector.toArray(cvArray);
+                inserted = context.getContentResolver().bulkInsert(CartEntry.CONTENT_URI, cvArray);
+                Log.i(Core.class.getSimpleName(), "Cart Inserting Complete. " + inserted + " Inserted");
+            }
+        }
     }
 
     public JSONObject getUserCart(int userId) {

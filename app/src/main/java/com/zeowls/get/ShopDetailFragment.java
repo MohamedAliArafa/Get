@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -503,8 +504,12 @@ public class ShopDetailFragment extends Fragment {
 //                            .addSharedElement(holder.ItemName, textTransitionName)
 //                            .commit();
 
+
                     Intent intent = new Intent(getActivity(), ItemDetailActivity.class);
                     intent.putExtra("id", items.get(absolutePosition).getId());
+                    bundle.putString("TRANS_NAME", textTransitionName);
+                    bundle.putString("TRANS_TEXT", items.get(absolutePosition).getName());
+                    intent.putExtra("bundle", bundle);
                     intent.putExtra("ShopId", id);
                     getActivity().startActivity(intent);
 

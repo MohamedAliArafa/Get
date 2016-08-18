@@ -21,7 +21,10 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -34,6 +37,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
 import com.zeowls.get.BackEnd.Core;
 import com.zeowls.get.DataModel.ShopDataModel;
 
@@ -54,6 +58,11 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
     private GoogleMap mMap;
     public Context c;
     RelativeLayout Map_Info;
+    TextView Map_info_Shop_Name, Map_info_Shop_Desc;
+    ImageView Map_info_Shop_Image;
+    Button Map_info_Shop_Visit;
+    Picasso picasso;
+
     SupportMapFragment mapFragment;
     getAllShops getAllShops;
     protected GoogleApiClient mGoogleApiClient;
@@ -103,6 +112,12 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         View bottomSheet = view.findViewById(R.id.bottom_sheet);
+        Map_info_Shop_Name = (TextView) view.findViewById(R.id.Map_info_Shop_Name);
+        Map_info_Shop_Desc = (TextView) view.findViewById(R.id.Map_info_Shop_Desc);
+        Map_info_Shop_Image = (ImageView) view.findViewById(R.id.Map_info_Shop_Image);
+        Map_info_Shop_Visit = (Button) view.findViewById(R.id.Map_info_Shop_Visit);
+        picasso = Picasso.with(getActivity());
+
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         getAllShops = new getAllShops();
@@ -133,11 +148,32 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
             }
         });
 
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if (shops.size() != 0) {
+                    for (int i = 0; i < shops.size(); i++) {
+                        if (String.valueOf(shops.get(i).getId()).equals(marker.getSnippet())) {
+                            Map_info_Shop_Name.setText(shops.get(i).getName());
+                            final int Shop_Id = shops.get(i).getId();
+                            picasso.load(shops.get(i).getPictureUrl()).fit().centerCrop().into(Map_info_Shop_Image);
+                            Map_info_Shop_Desc.setText(shops.get(i).getDescription());
+                            Map_info_Shop_Visit.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getActivity(), ShopDetailActivity.class);
+                                    intent.putExtra("Shop_Id", Shop_Id);
+                                    getActivity().startActivity(intent);
+                                }
+                            });
+                            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+                        }
+                    }
+                }
+
+                return true;
             }
         });
 
@@ -229,8 +265,8 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
                 for (int i = 0; i < shops.size(); i++) {
                     if (!shops.get(i).getLatitude().equals("null") && !shops.get(i).getLongitude().equals("null")) {
 
-                        LatLng sydney = new LatLng(Double.valueOf(shops.get(i).getLatitude()),Double.valueOf(shops.get(i).getLongitude()));
-                        mMap.addMarker(new MarkerOptions().position(sydney).title(shops.get(i).getName()));
+                        LatLng sydney = new LatLng(Double.valueOf(shops.get(i).getLatitude()), Double.valueOf(shops.get(i).getLongitude()));
+                        mMap.addMarker(new MarkerOptions().position(sydney).title(shops.get(i).getName()).snippet(String.valueOf(shops.get(i).getId())));
                         Log.d("Markers", String.valueOf(i));
 
                     }
@@ -300,7 +336,6 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
         }
     }
 
-
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                 .addConnectionCallbacks(this)
@@ -308,7 +343,6 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback, Goo
                 .addApi(LocationServices.API)
                 .build();
     }
-
 
     @Override
     public void onConnected(Bundle connectionHint) {
